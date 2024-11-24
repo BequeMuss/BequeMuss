@@ -1,0 +1,122 @@
+/* bestellung-styles.css */
+
+/* Grundlegende Stile für den Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0; /* Entferne das Padding des Bodys */
+}
+
+/* Header-Stile */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #4CAF50; /* Gleiche grüne Farbe wie im Produktdetail */
+    color: white;
+    padding: 15px 20px; /* Padding oben/unten und links/rechts */
+    margin: 0; /* Entferne Margin */
+}
+
+/* Logo im Header */
+header img {
+    width: 150px; /* Gleiche Breite wie im Produktdetail */
+    margin-right: 20px; /* Abstand zwischen Logo und Titel */
+}
+
+/* Bestellübersicht */
+#order-summary {
+    max-width: 800px;
+    margin: 20px auto; /* Zentriert den Inhalt */
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+/* Überschrift der Bestellübersicht */
+#order-summary h2 {
+    margin-top: 0;
+}
+
+/* Stile für die Bestellbestätigungs-Schaltfläche */
+#confirm-order {
+    background-color: #4CAF50; /* Gleiche grüne Hintergrundfarbe */
+    color: white; /* Weiße Schriftfarbe */
+    padding: 10px 20px; /* Innenabstand */
+    border: none; /* Kein Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger-Cursor */
+    font-size: 16px; /* Schriftgröße */
+    transition: background-color 0.3s; /* Übergangseffekt */
+}
+
+/* Hover-Effekt für die Schaltfläche */
+#confirm-order:hover {
+    background-color: #45a049; /* Dunklere grüne Farbe beim Hover */
+}
+
+/* Stile für die Textabsätze in der Bestellübersicht */
+#order-product, #order-color {
+    font-size: 1.2em; /* Gleiche Schriftgröße wie in den Produktdetails */
+    margin: 15px 0; /* Abstand zwischen den Absätzen */
+    line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+}
+
+/* Zusätzliche Stile für den Body-Inhalt */
+.container {
+    max-width: 1200px; /* Maximale Breite für den gesamten Inhalt */
+    margin: 0 auto; /* Zentriert die Container */
+    padding: 0 20px; /* Padding für den Container */
+}
+/* Stile für die Mengensteuerung */
+#quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Abstand nach oben */
+}
+
+#quantity-control button {
+    background-color: #4CAF50; /* Gleiche grüne Farbe */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px; /* Abgerundete Ecken */
+    margin: 0 5px; /* Abstand zwischen den Tasten */
+}
+
+#quantity {
+    width: 50px; /* Breite des Eingabefelds */
+    text-align: center; /* Text zentrieren */
+    font-size: 16px; /* Schriftgröße */
+    border: 1px solid #ccc; /* Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+}
+
+
+.confirm-button {
+    display: block; /* Macht den Button zu einem Block-Element */
+    margin: 20px auto; /* Zentriert den Button horizontal und fügt oben und unten einen Abstand hinzu */
+    text-align: center; /* Zentriert den Text im Button */
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+}
+
+.form input, .form textarea {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px; 
+    height: 20px; 
+}
+

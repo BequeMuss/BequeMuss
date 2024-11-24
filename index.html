@@ -1,1 +1,132 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BequeMuss - Personalisierte Kissen für Schüler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo-black-notext.png">
+    
+</head>
+<body class="body">
+
+    <div class="breaking-news">
+        <p>Für jede Bestellung spendet BequeMuss 1€ an UNICEF. <a href="#unicef">Erfahre mehr</a></p>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo-black.png" alt="BequeMuss Logo" style="height: 100px" draggable="false">
+            </div>
+            <ul>
+                <li><a href="#products">Produkte</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+        
+        
+    </header>
+
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Entdecken Sie Ihre perfekte Kissen-Welt</h1>
+            <p>Personalisierte Kissen von Schülern, für Schüler</p>
+        </div>
+        <a href="#products" class="btn-primary">Jetzt Entdecken!</a>
+    </section>
+
+    <!-- Products Section -->
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Unsere Produkte</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="assets/product1.png" alt="Produkt 1"draggable="false">
+                <h3>Kissen1</h3>
+                <p>Beschreibung Produkt 1</p>
+                <button class="btn-secondary" onclick="showProduct('kissen1')">Details</button>
+            </div>
+            <div class="product">
+                <img src="assets/product2.png" alt="Produkt 2"draggable="false">
+                <h3>Kissen2</h3>
+                <p>Beschreibung Produkt 2</p>
+                <button class="btn-secondary" onclick="showProduct('kissen2')">Details</button>
+            </div>
+            <div class="product">
+                <img src="assets/product3.png" alt="Produkt 3"draggable="false">
+                <h3>Kissen3</h3>
+                <p>Beschreibung Produkt 3</p>
+                <button class="btn-secondary" onclick="showProduct('kissen3')">Details</button>
+            </div>
+            <!-- Add more products here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Über uns</h2>
+        <div class="about-content">
+            <p>Willkommen bei BequeMuss! Wir sind ein kreatives Team von Schülern, das sich leidenschaftlich dafür einsetzt, personalisierte Kissen zu gestalten, die den Bedürfnissen und Wünschen von Schülern gerecht werden. Jedes Kissen wird mit viel Liebe und Hingabe gefertigt, um nicht nur funktional, sondern auch stilvoll zu sein. Unser Ziel ist es, jedem Schüler ein individuelles und einzigartiges Kissen zu bieten, das seinen persönlichen Stil widerspiegelt.</p>
+            <img src="logo-black.png" alt="Unser Team" class="about-image"draggable="false">
+        </div>
+    </section>
+
+   
+    <!-- UNICEF Spende Section -->
+    <section id="unicef" class="unicef">
+        <h2>Kissen für einen guten Zweck: UNICEF</h2>
+        <div class="unicef-content">
+            <p>Bei BequeMuss sind wir nicht nur stolz auf unsere kreativen Designs, sondern auch auf unser Engagement für soziale Verantwortung. Mit jeder Bestellung spenden wir 1€ an UNICEF, um bedürftigen Kindern zu helfen. Wir glauben daran, dass jedes Kissen nicht nur ein Produkt ist, sondern auch eine Möglichkeit, einen positiven Einfluss auf die Welt zu haben. Durch Ihre Unterstützung können wir gemeinsam einen Unterschied machen und Kindern in Not helfen.</p>
+            <img src="assets/unicef.png" alt="Unicef-Logo" class="unicef-image"draggable="false">
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+<section id="contact" class="contact">
+    <h2>Kontakt</h2>
+    <p>Wir freuen uns, von Ihnen zu hören! Wenn Sie Fragen haben oder weitere Informationen benötigen, können Sie uns jederzeit per E-Mail oder Instagram kontaktieren.</p>
+    <p>
+        <strong>E-Mail:</strong> 
+        <a href="mailto:bequemuss@gmail.com">
+            <img src="assets/email-icon.png" alt="E-Mail" style="height: 30px; margin-left: 5px;">
+        </a>
+        <a href="mailto:bequemuss@gmail.com">BequeMuss@gmail.com</a>
+    </p>
+    <p>
+        <strong>Folgen Sie uns auf Instagram:</strong> 
+        <a href="https://www.instagram.com/bequemuss.bk" target="_blank">
+            <img src="assets/instagram-icon.png" alt="Instagram" style="height: 30px; margin-left: 5px;">
+            bequemuss.bk
+        </a>
+    </p>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="logo-white-notext.png" alt="BequeMuss Logo" style="height: 50px;">
+            <a href="https://www.instagram.com/bequemuss.bk" target="_blank">
+                <img src="assets/instagram-icon.png" alt="Instagram" style="height: 30px; margin-left: 10px;"
+                >
+            </a>
+            
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 BequeMuss</p>
+        <a href="impressum.html">Impressum</a>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

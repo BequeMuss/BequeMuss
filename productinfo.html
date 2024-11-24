@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktdetails - BequeMuss</title>
+    <link rel="stylesheet" href="productinfo-styles.css">
+    <link rel="icon" type="image/png" href="logo-black-notext.png">
+</head>
+<body>
+
+    <header style="display: flex; align-items: center;">
+        <a href="index.html">
+            <img src="logo-white.png" alt="Logo" style="width: 150px; margin-right: 20px;"> <!-- Passen Sie die Breite an -->
+        </a>
+        <h1>Produktdetails</h1>
+        
+    </header>
+
+    <div id="product-detail">
+        <img id="product-image" src="" alt="Produktbild">
+        <div id="product-info"> <!-- Neuer Container für Textinformationen -->
+            <h1 id="product-title"></h1>
+            <p id="product-description"></p>
+            <p id="product-price"></p>
+
+            <!-- Farbauswahl -->
+            <div id="color-selection">
+                <h3>Farbe wählen:</h3>
+                <div class="color-option" style="background-color: red;" data-color="rot"></div>
+                <div class="color-option" style="background-color: blue;" data-color="blau"></div>
+                <div class="color-option" style="background-color: green;" data-color="grün"></div>
+                <div class="color-option" style="background-color: yellow;" data-color="gelb"></div>
+            </div>
+
+            <button id="buy-button">Bestellen</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+// Funktion, um die Produktdetails basierend auf der URL abzurufen
+function loadProductDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('product');
+
+    const products = {
+        kissen1: {
+            title: "Kissen1",
+            image: "assets/product1.png", // Standardbild
+            description: "Dieses Kissen ist perfekt für Schüler, die Komfort und Stil kombinieren möchten.",
+            price: "29,99 €",
+            images: {
+                rot: "assets/product1-red.png",
+                blau: "assets/product1-blue.png",
+                grün: "assets/product1-green.png",
+                gelb: "assets/product1-yellow.png" 
+            }
+        },
+        kissen2: {
+            title: "Kissen2",
+            image: "assets/product2.png", // Standardbild
+            description: "Ein stilvolles und bequemes Kissen, das jedem Schüler Freude bereitet.",
+            price: "34,99 €",
+            images: {
+                rot: "assets/product2-red.png",
+                blau: "assets/product2-blue.png",
+                grün: "assets/product2-green.png",
+                gelb: "assets/product2-yellow.png" 
+            }
+        },
+        kissen3: {
+            title: "Kissen3",
+            image: "assets/product3.png", // Standardbild
+            description: "Ideal für lange Lernsessions und zum Entspannen.",
+            price: "39,99 €",
+            images: {
+                rot: "assets/product3-red.png",
+                blau: "assets/product3-blue.png",
+                grün: "assets/product3-green.png",
+                gelb: "assets/product3-yellow.png" 
+            }
+        }
+    };
+
+    // Produktdaten abrufen und anzeigen
+    const product = products[productName];
+    if (product) {
+        document.getElementById('product-title').textContent = product.title;
+        document.getElementById('product-image').src = product.image;
+        document.getElementById('product-description').textContent = product.description;
+        document.getElementById('product-price').textContent = product.price;
+
+        // Event Listener für die Farbauswahl
+        const colorOptions = document.querySelectorAll('.color-option');
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                colorOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+
+                const selectedColor = this.dataset.color;
+                document.getElementById('product-image').src = product.images[selectedColor]; // Bild aktualisieren
+            });
+        });
+    } else {
+        document.getElementById('product-detail').innerHTML = "<p>Produkt nicht gefunden.</p>";
+    }
+}
+
+// Lade die Produktdetails, wenn die Seite geladen wird
+window.onload = loadProductDetails;
+
+document.getElementById('buy-button').addEventListener('click', function() {
+    const productTitle = document.getElementById('product-title').textContent;
+    const selectedColor = document.querySelector('.color-option.selected');
+    const color = selectedColor ? selectedColor.dataset.color : 'keine Farbe gewählt';
+    
+    // Weiterleitung zur Bestellseite mit den gewählten Parametern
+    window.location.href = `bestellung.html?title=${encodeURIComponent(productTitle)}&color=${encodeURIComponent(color)}`;
+});
+    </script>
+</body>
+</html>

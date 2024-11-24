@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellung - BequeMuss</title>
+    <link rel="stylesheet" href="bestellung-styles.css">
+    <link rel="icon" type="image/png" href="logo-black-notext.png">
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="logo-white.png" alt="Logo">
+        </a>
+        <h1>Bestellung</h1>
+    </header>
+
+    <div id="order-summary">
+        <h2>Bestellübersicht</h2>
+        <p id="order-product"></p>
+        <p id="order-color"></p>
+        
+        <div id="quantity-control">
+            <button id="decrease-quantity">-</button>
+            <input type="number" id="quantity" value="1" min="1" readonly>
+            <button id="increase-quantity">+</button>
+        </div>
+        <form
+            action="https://formspree.io/f/mzzbvkkk"
+            method="POST"
+            class="form">
+            <label>
+                <input name="Name"placeholder="Name">
+            </label>
+            <label>
+                <input type="email" name="Email" placeholder="E-Mail Adresse">
+            </label>
+            <label>
+                <input name="Notiz" placeholder="Notiz  -  z.B. Verwendungszweck">
+            </label>
+            
+            <label>
+                <input type="hidden" name="Bestellung" id="order-details">
+            </label>
+            <!-- your other form fields go here -->
+            
+        </form>
+        
+        </label>
+        <input type="checkbox" id="confirmation-checkbox" required="">
+        <label for="confirmation-checkbox">Ich bestätige die Bestellung, Zahlung und Abholung des Produkts.</label>
+        <p id="checkbox-hint" style="color: red; display: none;">!</p>
+        <button id="confirm-order" class="confirm-button" disabled>Bestellung bestätigen</button>
+    
+    </div>
+    
+    
+
+    <script>
+        // Aktiviert oder deaktiviert die Schaltfläche "Bestellung bestätigen" basierend auf dem Kontrollkästchen
+        const confirmationCheckbox = document.getElementById('confirmation-checkbox');
+        const confirmOrderButton = document.getElementById('confirm-order');
+        const checkboxHint = document.getElementById('checkbox-hint');
+
+        confirmationCheckbox.addEventListener('change', function() {
+            confirmOrderButton.disabled = !this.checked;
+            checkboxHint.style.display = this.checked ? 'none' : 'block'; // Hinweistext ausblenden, wenn das Kontrollkästchen aktiviert ist
+        });
+        
+        document.getElementById('confirm-order').addEventListener('click', function() {
+            
+        });
+        // Funktion, um die Bestelldaten aus der URL abzurufen
+        function loadOrderDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productTitle = urlParams.get('title');
+            const productColor = urlParams.get('color');
+    
+            document.getElementById('order-product').textContent = `Produkt: ${productTitle}`;
+            document.getElementById('order-color').textContent = `Farbe: ${productColor}`;
+        }
+    
+        // Lade die Bestelldetails, wenn die Seite geladen wird
+        window.onload = loadOrderDetails;
+    
+        // Mengensteuerung
+        const quantityInput = document.getElementById('quantity');
+        let quantity = parseInt(quantityInput.value);
+    
+        document.getElementById('increase-quantity').addEventListener('click', function() {
+            quantity++;
+            quantityInput.value = quantity;
+        });
+    
+        document.getElementById('decrease-quantity').addEventListener('click', function() {
+            if (quantity > 1) {
+                quantity--;
+                quantityInput.value = quantity;
+            }
+        });
+    
+        document.getElementById('confirm-order').addEventListener('click', function() {
+    // Überprüfen, ob die Checkbox aktiviert ist
+    if (!confirmationCheckbox.checked) {
+        checkboxHint.style.display = 'block'; // Zeige das rote Ausrufezeichen an
+    } else {
+        // Wenn die Checkbox aktiviert ist, setze die Bestelldaten
+        const productTitle = document.getElementById('order-product').textContent.replace('Produkt: ', '');
+        const productColor = document.getElementById('order-color').textContent.replace('Farbe: ', '');
+
+        // Setze die Bestelldaten in das versteckte Eingabefeld
+        const orderDetails = `${productTitle} ${quantity}x , Farbe ${productColor}`;
+        document.getElementById('order-details').value = orderDetails;
+
+        // Sende das Formular automatisch
+        document.querySelector('form').submit();
+    }
+});
+
+    </script>
+    
+</body>
+</html>
