@@ -85,3 +85,9 @@ a {
 .color-option.selected {
     border-color: #000;
 }
+
+@media (max-width: 600px) {
+    .h1 {
+        font-size: 32px;
+    }
+}
