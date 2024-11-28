@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellung - BequeMuss</title>
+    <link rel="stylesheet" href="bestellung-styles.css">
+    <link rel="icon" type="image/png" href="logo-black-notext.png">
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="logo-white.png" alt="Logo">
+        </a>
+        <h1>Bestellung</h1>
+    </header>
+
+    <div id="order-summary">
+
+        <h2>Bestellung erfolgreich</h2> 
+        <br>
+        <img src="assets/checkmark.png" alt="checkmark" height="300px">
+        <br>
+        <h3>Folgendes haben Sie bestellt:</h3>
+
+        <p id="bestellung"></p>
+
+        <h3>Hinterlegte Kontaktdaten:</h3>
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+
+    </div>
+
+    
+    <script>
+        // Funktion zum Extrahieren und Speichern der URL-Parameter
+        function getUrlParameters() {
+            const params = new URLSearchParams(window.location.search); // Holt die URL-Parameter
+            
+            // Dekodierte Parameter werden in separaten Variablen gespeichert
+            let bestellung = decodeURIComponent(params.get('Bestellung') || '');
+            let email = decodeURIComponent(params.get('Email') || '');
+            let name = decodeURIComponent(params.get('Name') || '');
+            let notiz = decodeURIComponent(params.get('Notiz') || '');
+            
+            // Werte in den entsprechenden HTML-Elementen anzeigen
+            document.getElementById('bestellung').textContent = bestellung;
+            document.getElementById('email').textContent = email;
+            document.getElementById('name').textContent = name;
+            document.getElementById('notiz').textContent = notiz;
+        }
+
+        // Rufe die Funktion auf, um die Parameter zu extrahieren und anzuzeigen
+        getUrlParameters();
+    </script>
