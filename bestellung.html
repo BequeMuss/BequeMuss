@@ -20,6 +20,8 @@
         <h2>Bestellübersicht</h2>
         <p id="order-product"></p>
         <p id="order-color"></p>
+        <p id="order-price"></p>
+        
         
         <div id="quantity-control">
             <p>Anzahl:</p>
@@ -54,6 +56,9 @@
             <label>
                 <input type="hidden" name="Bestellung" id="order-details">
             </label>
+            <label>
+                 <input type="hidden" name="Preis" id="order-price-hidden"> <!-- Hidden field for price -->
+              </label>
             <!-- your other form fields go here -->
             
         </form>
@@ -69,49 +74,49 @@
     
 
     <script>
-        // Aktiviert oder deaktiviert die Schaltfläche "Bestellung bestätigen" basierend auf dem Kontrollkästchen
-        const confirmationCheckbox = document.getElementById('confirmation-checkbox');
-        const confirmOrderButton = document.getElementById('confirm-order');
-        const checkboxHint = document.getElementById('checkbox-hint');
+// Aktiviert oder deaktiviert die Schaltfläche "Bestellung bestätigen" basierend auf dem Kontrollkästchen
+const confirmationCheckbox = document.getElementById('confirmation-checkbox');
+const confirmOrderButton = document.getElementById('confirm-order');
+const checkboxHint = document.getElementById('checkbox-hint');
 
-        confirmationCheckbox.addEventListener('change', function() {
-            confirmOrderButton.disabled = !this.checked;
-            checkboxHint.style.display = this.checked ? 'none' : 'block'; // Hinweistext ausblenden, wenn das Kontrollkästchen aktiviert ist
-        });
-        
-        document.getElementById('confirm-order').addEventListener('click', function() {
-            
-        });
-        // Funktion, um die Bestelldaten aus der URL abzurufen
-        function loadOrderDetails() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const productTitle = urlParams.get('title');
-            const productColor = urlParams.get('color');
-    
-            document.getElementById('order-product').textContent = `Produkt: ${productTitle}`;
-            document.getElementById('order-color').textContent = `Farbe: ${productColor}`;
-        }
-    
-        // Lade die Bestelldetails, wenn die Seite geladen wird
-        window.onload = loadOrderDetails;
-    
-        // Mengensteuerung
-        const quantityInput = document.getElementById('quantity');
-        let quantity = parseInt(quantityInput.value);
-    
-        document.getElementById('increase-quantity').addEventListener('click', function() {
-            quantity++;
-            quantityInput.value = quantity;
-        });
-    
-        document.getElementById('decrease-quantity').addEventListener('click', function() {
-            if (quantity > 1) {
-                quantity--;
-                quantityInput.value = quantity;
-            }
-        });
-    
-        document.getElementById('confirm-order').addEventListener('click', function() {
+confirmationCheckbox.addEventListener('change', function() {
+    confirmOrderButton.disabled = !this.checked;
+    checkboxHint.style.display = this.checked ? 'none' : 'block'; // Hinweistext ausblenden, wenn das Kontrollkästchen aktiviert ist
+});
+
+// Funktion, um die Bestelldaten aus der URL abzurufen
+function loadOrderDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productTitle = urlParams.get('title');
+    const productColor = urlParams.get('color');
+    const productPrice = urlParams.get('price'); // Preis abrufen
+
+    document.getElementById('order-product').textContent = `Produkt: ${productTitle}`;
+    document.getElementById('order-color').textContent = `Farbe: ${productColor}`;
+    document.getElementById('order-price').textContent = `Preis: ${productPrice}`; // Preis anzeigen
+    document.getElementById('order-price-hidden').value = productPrice; // Preis in das versteckte Eingabefeld setzen
+}
+
+// Lade die Bestelldetails, wenn die Seite geladen wird
+window.onload = loadOrderDetails;
+
+// Mengensteuerung
+const quantityInput = document.getElementById('quantity');
+let quantity = parseInt(quantityInput.value);
+
+document.getElementById('increase-quantity').addEventListener('click', function() {
+    quantity++;
+    quantityInput.value = quantity;
+});
+
+document.getElementById('decrease-quantity').addEventListener('click', function() {
+    if (quantity > 1) {
+        quantity--;
+        quantityInput.value = quantity;
+    }
+});
+
+document.getElementById('confirm-order').addEventListener('click', function() {
     // Überprüfen, ob die Checkbox aktiviert ist
     if (!confirmationCheckbox.checked) {
         checkboxHint.style.display = 'block'; // Zeige das rote Ausrufezeichen an
@@ -119,16 +124,16 @@
         // Wenn die Checkbox aktiviert ist, setze die Bestelldaten
         const productTitle = document.getElementById('order-product').textContent.replace('Produkt: ', '');
         const productColor = document.getElementById('order-color').textContent.replace('Farbe: ', '');
+        const productPrice = document.getElementById('order-price-hidden').value; // Preis abrufen
 
         // Setze die Bestelldaten in das versteckte Eingabefeld
-        const orderDetails = `${productTitle} ${quantity}x , Farbe ${productColor}`;
+        const orderDetails = `${productTitle} ${quantity}x , Farbe ${productColor}, Preis ${productPrice}`;
         document.getElementById('order-details').value = orderDetails;
 
         // Sende das Formular automatisch
         document.querySelector('form').submit();
     }
 });
-
     </script>
     
 </body>

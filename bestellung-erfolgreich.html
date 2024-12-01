@@ -23,8 +23,10 @@
         <img src="assets/checkmark.png" alt="checkmark" height="150px">
         <br>
         <h3>Folgendes haben Sie bestellt:</h3>
-
         <p id="bestellung"></p>
+
+        <h3>Zu zahlen:</h3>
+        <p id="preis"></p>
 
         <h3>Hinterlegte Kontaktdaten:</h3>
         <p><strong>Name:</strong> <span id="name"></span></p>
@@ -32,25 +34,26 @@
 
     </div>
 
-    
     <script>
-        // Funktion zum Extrahieren und Speichern der URL-Parameter
-        function getUrlParameters() {
-            const params = new URLSearchParams(window.location.search); // Holt die URL-Parameter
-            
-            // Dekodierte Parameter werden in separaten Variablen gespeichert
-            let bestellung = decodeURIComponent(params.get('Bestellung') || '');
-            let email = decodeURIComponent(params.get('Email') || '');
-            let name = decodeURIComponent(params.get('Name') || '');
-            let notiz = decodeURIComponent(params.get('Notiz') || '');
-            
-            // Werte in den entsprechenden HTML-Elementen anzeigen
-            document.getElementById('bestellung').textContent = bestellung;
-            document.getElementById('email').textContent = email;
-            document.getElementById('name').textContent = name;
-            document.getElementById('notiz').textContent = notiz;
-        }
+    // Funktion zum Extrahieren und Speichern der URL-Parameter
+    function getUrlParameters() {
+        const params = new URLSearchParams(window.location.search); // Holt die URL-Parameter
+        
+        // Dekodierte Parameter werden in separaten Variablen gespeichert
+        let bestellung = decodeURIComponent(params.get('Bestellung') || '');
+        let email = decodeURIComponent(params.get('Email') || '');
+        let name = decodeURIComponent(params.get('Name') || '');
+        let notiz = decodeURIComponent(params.get('Notiz') || '');
+        let preis = decodeURIComponent(params.get('Preis') || ''); // Preis abrufen
+        
+        // Werte in den entsprechenden HTML-Elementen anzeigen
+        document.getElementById('bestellung').textContent = bestellung;
+        document.getElementById('email').textContent = email;
+        document.getElementById('name').textContent = name;
+        document.getElementById('notiz').textContent = notiz;
+        document.getElementById('preis').textContent = preis; // Preis anzeigen
+    }
 
-        // Rufe die Funktion auf, um die Parameter zu extrahieren und anzuzeigen
-        getUrlParameters();
-    </script>
+    // Rufe die Funktion auf, um die Parameter zu extrahieren und anzuzeigen
+    getUrlParameters();
+</script>
