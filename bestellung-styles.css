@@ -58,7 +58,7 @@ header img {
 }
 
 /* Stile für die Textabsätze in der Bestellübersicht */
-#order-product, #order-color, #order-price #quantity-control p {
+#order-product, #order-color, #order-price, #quantity-control p {
     font-size: 1.2em; /* Gleiche Schriftgröße wie in den Produktdetails */
     margin: 15px 0; /* Abstand zwischen den Absätzen */
     line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
