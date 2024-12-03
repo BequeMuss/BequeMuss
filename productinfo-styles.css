@@ -92,3 +92,26 @@ a {
         white-space: nowrap; /* Verhindert Umbruch, der Text bleibt in einer Zeile */
     }
 }
+
+.view-option {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ccc;
+    border-radius: 25%;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #ebebeb;
+    background-size: contain; /* Passt das Bild an, um den gesamten Container zu füllen */
+    background-position: center; /* Bild wird in der Mitte des Containers positioniert */
+    background-repeat: no-repeat; /* Verhindert, dass das Bild wiederholt wird */
+
+}
+
+
+.view-option.view1 {
+    background-image: url('assets/view-1.png');
+}  
+.view-option.view2 {
+    background-image: url('assets/view-2.png');
+}  
