@@ -93,6 +93,11 @@ a {
     }
 }
 
+.view-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .view-option {
     display: inline-block;
     width: 80px;
