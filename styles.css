@@ -27,15 +27,12 @@ header {
     text-align: center;
 }
 
-h1{
-    line-height:normal;
-}
-
 h2 {
     font-size: 36px; /* Setze die Schriftgröße für alle h2-Elemente */
     margin-top: 0; /* Optional: um den oberen Abstand zu entfernen */
     margin-left: 20px;
     margin-bottom: 0;
+    line-height:normal;
 }
 
 nav {
