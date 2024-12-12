@@ -25,7 +25,7 @@
         kissen2: {
             title: "Sitzkissen mit Personalisierung",
             image: "assets/product1-green.png", // Standardbild
-            description: "Ein einfaches, bequemes Sitzkissen für Stühle, personalisiert mit Namen (Eingabe bei Bestellung)",
+            description: "Ein einfaches, bequemes Sitzkissen für Stühle, personalisiert (Eingabe bei Bestellung)",
             price: "16 €",
             images: {
                 grau: "assets/product1-grey.png",
