@@ -17,21 +17,25 @@
         
     </header>
 
-    <div id="product-detail">
+    <div id="product-detail"class="product-detail">
         
-        <!-- View Auswahl -->
-        <div id="view-selection">
-            <div class="view-option view1"></div>
-            <div class="view-option view2"></div>
-        </div>
-
-
-        <img id="product-image" src="" alt="Produktbild">
-        <div id="product-info"> <!-- Neuer Container für Textinformationen -->
+        <div id="product-info" class="product-info">
             <h1 id="product-title"></h1>
             <p id="product-description"></p>
             <p id="product-price"></p>
 
+            <div id="image-and-view" class="image-and-view">
+                <!-- View Auswahl -->
+                <div id="view-selection" class="view-selection">
+                    <div class="view-option view1"></div>
+                    <div class="view-option view2"></div>
+                </div>
+                <img id="product-image" src="" alt="Produktbild">
+            </div>
+
+        </div>
+
+        <div id="buy-main" class="buy-main">
             <!-- Farbauswahl -->
             <div id="color-selection">
                 <h3>Farbe wählen:</h3>
@@ -43,10 +47,11 @@
                 <div class="color-option" style="background-color: black;" data-color="schwarz"></div>
                 
             </div>
-
-            <button id="buy-button">Bestellen</button>
+            <button id="buy-button" class="buy-button">Bestellen</button>
         </div>
+        
     </div>
+    
 
     <script src="script.js"></script>
     <script src="productionfo-script.js"></script>
