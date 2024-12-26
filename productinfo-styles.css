@@ -39,7 +39,7 @@ a {
 
 #product-image {
     width: 70%;  /* Bildbreite auf 40% setzen */
-    height: 70%; /* Höhe automatisch anpassen ##################################*/
+    height: 70%; /* Höhe automatisch anpassen ################### TOFU TODO ###############*/
     border-radius: 8px; /* Ecken abrunden */
     margin-right: 20px; /* Abstand zwischen Bild und Text */
 }

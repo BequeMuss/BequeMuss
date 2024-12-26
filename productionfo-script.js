@@ -6,7 +6,7 @@
     const products = {
         kissen1: {
             title: "Sitzkissen",
-            image: "assets/product1-lightblue.png", // Standardbild
+            image: "assets/view-2.png", // Standardbild
             description: "Ein einfaches, bequemes Sitzkissen für Stühle, ohne Personalisierung.",
             price: "15 €",
             images: {
@@ -32,7 +32,7 @@
         },
         kissen2: {
             title: "Sitzkissen mit Personalisierung",
-            image: "assets/product1-green.png", // Standardbild
+            image: "assets/view-2-name.png", // Standardbild
             description: "Ein einfaches, bequemes Sitzkissen für Stühle, personalisiert (Eingabe bei Bestellung)",
             price: "16 €",
             images: {
