@@ -10,12 +10,20 @@
             description: "Ein einfaches, bequemes Sitzkissen für Stühle, ohne Personalisierung.",
             price: "15 €",
             images: {
+                /*
                 grau: "assets/product1-grey.png",
                 hellblau: "assets/product1-lightblue.png",
                 dunkelblau: "assets/product1-darkblue.png",
                 rosa: "assets/product1-pink.png",
                 grün: "assets/product1-green.png",
                 schwarz: "assets/product1-black.png"
+                */
+                "grau": "assets/view-2.png",
+                "hellblau": "assets/view-2.png",
+                "dunkelblau": "assets/view-2.png",
+                "rosa": "assets/view-2.png",
+                "grün": "assets/view-2.png",
+                "schwarz": "assets/view-2.png"
             },
             views: {
                 view1: "assets/view-1.png",
@@ -28,16 +36,24 @@
             description: "Ein einfaches, bequemes Sitzkissen für Stühle, personalisiert (Eingabe bei Bestellung)",
             price: "16 €",
             images: {
+                /*
                 grau: "assets/product1-grey.png",
                 hellblau: "assets/product1-lightblue.png",
                 dunkelblau: "assets/product1-darkblue.png",
                 rosa: "assets/product1-pink.png",
                 grün: "assets/product1-green.png",
                 schwarz: "assets/product1-black.png"
+                */
+                "grau": "assets/view-2-name.png",
+                "hellblau": "assets/view-2-name.png",
+                "dunkelblau": "assets/view-2-name.png",
+                "rosa": "assets/view-2-name.png",
+                "grün": "assets/view-2-name.png",
+                "schwarz": "assets/view-2-name.png"
             },
             views: {
-                view1: "assets/view-1.png",
-                view2: "assets/view-2.png"
+                view1: "assets/view-1-name.png",
+                view2: "assets/view-2-name.png"
             }
         },
         kissen3: {
