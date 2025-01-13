@@ -34,7 +34,7 @@
             title: "Sitzkissen mit Personalisierung",
             image: "assets/view-2-name.png", // Standardbild
             description: "Ein einfaches, bequemes Sitzkissen für Stühle, personalisiert (Eingabe bei Bestellung)",
-            price: "16 €",
+            price: "15 € + 20ct/Buchstabe",
             images: {
                 /*
                 grau: "assets/product1-grey.png",
